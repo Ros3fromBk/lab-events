@@ -19,7 +19,16 @@ canvasGrid.addEventListener("click", (event) => {
     }
 })
 
+
 const palette = document.querySelector("#palette")
 const currentColor = document.querySelector("#current-color")
 const cells = document.querySelectorAll(".cells")
 
+palette.addEventListener("click", (event) => {
+    console.log(event.target.style.backgroundColor);
+
+    if (event.target.classList.contains("color")){
+        const color = event.target.style.backgroundColor;
+        currentColor.style.backgroundColor = color;
+    }
+})
